@@ -1,12 +1,12 @@
 # encoding: utf-8
 Gem::Specification.new do |s|
-  s.name            = 'activerecord-storage'
+  s.name            = 'activestorage'
   s.version         = '1.0.0'
   s.authors         = ['Yaroslav Konoplov']
   s.email           = ['yaroslav@inbox.com']
   s.summary         = 'Better ActiveRecord::Store'
   s.description     = 'Better ActiveRecord::Store'
-  s.homepage        = 'http://github.com/yivo/activerecord-storage'
+  s.homepage        = 'http://github.com/yivo/activestorage'
   s.license         = 'MIT'
 
   s.executables     = `git ls-files -z -- bin/*`.split("\x0").map{ |f| File.basename(f) }

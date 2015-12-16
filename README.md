@@ -4,5 +4,5 @@
 
 ## Gemfile
 ```ruby
-gem 'activerecord-storage', github: 'yivo/activerecord-storage'
+gem 'activestorage', github: 'activestorage'
 ```
