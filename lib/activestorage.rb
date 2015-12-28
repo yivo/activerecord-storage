@@ -100,13 +100,13 @@ class ActiveRecord::Base
       self.storage_attribute_names += [attr]
 
       self.storage_attributes_type_mapping =
-        self.storage_attributes_type_mapping.merge Hash[attr, type]
+        self.storage_attributes_type_mapping.merge(attr => type)
 
       self.storage_attributes_readonly_mapping =
-        self.storage_attributes_readonly_mapping.merge Hash[attr, readonly]
+        self.storage_attributes_readonly_mapping.merge(attr => readonly)
 
       self.storage_names_mapping =
-        self.storage_names_mapping.merge Hash[attr, storage_attr]
+        self.storage_names_mapping.merge(attr => storage_attr)
 
       class_eval <<-BODY, __FILE__, __LINE__ + 1
         def #{attr}
