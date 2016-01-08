@@ -1,6 +1,8 @@
 require 'active_record'
 require 'active_support/all'
 
+require 'activestorage/migration'
+
 class ActiveRecord::Base
   class_attribute :storage_names,                        instance_accessor: false, instance_predicate: false
   class_attribute :storage_attribute_names,              instance_accessor: false, instance_predicate: false
