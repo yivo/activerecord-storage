@@ -194,10 +194,10 @@ class ActiveRecord::Base
 
   def typecast_storage_attribute(attr, type, value)
     case type
-      when :identifier, :integer  then value.to_i
-      when :string                then value.to_s
-      when :decimal, :float       then value.to_f
-      when :boolean               then !!value
+      when :string          then value.is_a?(String)  ? value : value.to_s
+      when :integer         then value.is_a?(Integer) ? value : value.to_i
+      when :decimal, :float then value.is_a?(Float)   ? value : value.to_f
+      when :boolean         then !!value
       else value
     end
   end
