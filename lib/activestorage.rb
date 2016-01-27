@@ -1,5 +1,7 @@
 require 'active_record'
 require 'active_support/all'
+require 'oj'
+require 'oj_mimic_json'
 
 require 'activestorage/macro'
 require 'activestorage/extension'

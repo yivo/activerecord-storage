@@ -3,7 +3,7 @@ module ActiveStorage
     extend ActiveSupport::Concern
 
     module ClassMethods
-      def storage(storage_attr, type: nil, &block)
+      def storage(storage_attr, type: Oj, &block)
 
         unless self < ActiveStorage::Extension
           include ActiveStorage::Extension
@@ -11,10 +11,10 @@ module ActiveStorage
 
         storage_attr = storage_attr.to_sym
 
-        if type && !storage_names.include?(storage_attr)
+        unless storage_names.include?(storage_attr)
           serialize(storage_attr, type)
           self.storage_names += [storage_attr]
-          class_eval <<-BODY, __FILE__, __LINE__ + 1
+          class_eval <<-RUBY, __FILE__, __LINE__ + 1
             def #{storage_attr}_cache
               @#{storage_attr}_cache ||= {}
             end
@@ -60,7 +60,7 @@ module ActiveStorage
             protected :#{storage_attr}_cache
             protected :read_attribute_from_#{storage_attr}
             protected :write_attribute_to_#{storage_attr}
-          BODY
+          RUBY
         end
 
         if block

@@ -16,4 +16,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activesupport', '>= 3.2.0'
   s.add_dependency 'activerecord', '>= 3.0'
+  s.add_dependency 'oj', '>= 2.14'
+  s.add_dependency 'oj_mimic_json', '>= 1.0'
 end
