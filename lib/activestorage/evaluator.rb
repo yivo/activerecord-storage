@@ -1,13 +1,15 @@
+# encoding: utf-8
 # frozen_string_literal: true
+
 module ActiveStorage
   class Evaluator
     include Singleton
 
-    attr_accessor :storage_attribute
-    attr_accessor :active_record
+    attr_accessor :activerecord
+    attr_accessor :storage_scope
 
-    def accessor(accessors)
-      @active_record.storage_accessor(@storage_attribute, accessors)
+    def attribute(*args)
+      activerecord.storage_attribute(storage_scope, *args)
     end
 
     def evaluate(&block)

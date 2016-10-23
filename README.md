@@ -4,5 +4,5 @@
 
 ## Gemfile
 ```ruby
-gem 'activestorage', github: 'activestorage'
+gem 'activestorage', '~> 1.0'
 ```

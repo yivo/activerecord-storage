@@ -1,10 +1,11 @@
-# frozen_string_literal: true
 # encoding: utf-8
+# frozen_string_literal: true
+
 Gem::Specification.new do |s|
   s.name            = 'activestorage'
-  s.version         = '1.0.0'
+  s.version         = '1.0.1'
   s.authors         = ['Yaroslav Konoplov']
-  s.email           = ['yaroslav@inbox.com']
+  s.email           = ['eahome00@gmail.com']
   s.summary         = 'Better ActiveRecord::Store'
   s.description     = 'Better ActiveRecord::Store'
   s.homepage        = 'http://github.com/yivo/activestorage'
@@ -15,8 +16,6 @@ Gem::Specification.new do |s|
   s.test_files      = `git ls-files -z -- {test,spec,features}/*`.split("\x0")
   s.require_paths   = ['lib']
 
-  s.add_dependency 'activesupport', '>= 3.2.0'
-  s.add_dependency 'activerecord', '>= 3.0'
-  s.add_dependency 'oj', '>= 2.14'
-  s.add_dependency 'oj_mimic_json', '>= 1.0'
+  s.add_dependency 'activesupport', '>= 3.0', '< 6.0'
+  s.add_dependency 'activerecord',  '>= 3.0', '< 6.0'
 end
